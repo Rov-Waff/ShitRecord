@@ -20,7 +20,7 @@ def initialize(project):
 def compile_ui_files(project, logger):
     """将 .ui 文件编译为 .py 文件"""
     ui_dir = project.get_property("dir_source_ui")
-    output_dir = os.path.join(project.get_property("dir_source_main_python"), "your_package/ui")
+    output_dir = os.path.join(project.get_property("dir_source_main_python"), "shit_recorder/ui")
     compiler = project.get_property("pyqt_ui_compiler")
     
     if not os.path.exists(ui_dir):
