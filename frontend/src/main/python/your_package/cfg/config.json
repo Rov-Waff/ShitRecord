@@ -1,5 +1,5 @@
 {
     "name": "faf",
     "passwd": "fafafafaf",
-    "backend_url": "localhost"
+    "backend_url": "http://localhost"
 }
