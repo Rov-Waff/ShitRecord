@@ -13,8 +13,11 @@ class App(QWidget,Ui_Form):
         self.load_cfg()
 
         self.btn_account.clicked.connect(self.open_account_window)
+        
+        self.http_response=''
         print(self.config)
         self.show()
+        self.load_status()
     def load_cfg(self):
         with open('frontend/src/main/python/your_package/cfg/config.json','r') as f:
            self.config=json.loads(f.read())
@@ -24,7 +27,13 @@ class App(QWidget,Ui_Form):
         print(self.config)
 
     def load_status(self):
-        r=requests.post(f"{self.config['backend_url']}/getStatus")
+        try:
+            self.http_response=requests.post(f"{self.config['backend_url']}/stat/getStatus",data=self.config)
+            if self.http_response.status_code!=200:
+                QMessageBox.warning(self,"Error","无法连接到拉屎服务器，检查账号配置和您的网络")
+        except:
+            QMessageBox.warning(self,"Error","账号配置不正确")
+        
 if __name__=="__main__":
     app=QApplication(sys.argv)
     window=App()

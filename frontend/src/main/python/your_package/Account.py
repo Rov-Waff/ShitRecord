@@ -25,6 +25,7 @@ class Account(QDialog,Ui_Dialog):
             json.dump(self.cfg,f,indent=4)
         self.father.load_cfg()
         self.close()
+        self.father.load_status()
 if __name__=='__main__':
     app=QApplication(sys.argv)
     window=Account()
