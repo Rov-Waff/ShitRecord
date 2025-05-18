@@ -7,14 +7,14 @@ use_plugin("python.core")
 
 @init
 def initialize(project):
-    project.build_depends_on("pyqt5")  # 或者 "pyside2" 如果你用 PySide
+    project.build_depends_on("pyside6")  # 或者 "pyside2" 如果你用 PySide
     
     # 设置 UI 文件目录和输出目录
     project.set_property("dir_source_ui", "src/main/ui")  # UI 文件目录
     project.set_property("dir_source_main_python", "src/main/python")  # Python 代码目录
     
     # 设置 pyuic5 或 pyside2-uic 命令
-    project.set_property("pyqt_ui_compiler", "pyuic5")  # 或者 "pyside2-uic"
+    project.set_property("pyqt_ui_compiler", "pyside6-uic")  # 或者 "pyside2-uic"
 
 @task
 def compile_ui_files(project, logger):
