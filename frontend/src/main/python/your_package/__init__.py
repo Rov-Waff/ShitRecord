@@ -24,7 +24,7 @@ class App(QWidget,Ui_Form):
         print(self.config)
 
     def load_status(self):
-        r=requests.post("http://localhost/api/getStatus")
+        r=requests.post(f"{self.config['backend_url']}/getStatus")
 if __name__=="__main__":
     app=QApplication(sys.argv)
     window=App()
