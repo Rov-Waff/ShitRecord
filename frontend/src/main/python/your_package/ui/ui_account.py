@@ -41,6 +41,37 @@ class Ui_Dialog(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout_2)
 
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.label_2 = QLabel(Dialog)
+        self.label_2.setObjectName(u"label_2")
+
+        self.horizontalLayout_3.addWidget(self.label_2)
+
+        self.le_passwd = QLineEdit(Dialog)
+        self.le_passwd.setObjectName(u"le_passwd")
+        self.le_passwd.setEchoMode(QLineEdit.EchoMode.Password)
+
+        self.horizontalLayout_3.addWidget(self.le_passwd)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_3)
+
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.label_3 = QLabel(Dialog)
+        self.label_3.setObjectName(u"label_3")
+
+        self.horizontalLayout_4.addWidget(self.label_3)
+
+        self.le_url = QLineEdit(Dialog)
+        self.le_url.setObjectName(u"le_url")
+
+        self.horizontalLayout_4.addWidget(self.le_url)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_4)
+
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.btn_undo = QPushButton(Dialog)
@@ -63,8 +94,10 @@ class Ui_Dialog(object):
     # setupUi
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
+        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"\u8d26\u53f7\u4fe1\u606f", None))
         self.label.setText(QCoreApplication.translate("Dialog", u"\u540d\u5b57", None))
+        self.label_2.setText(QCoreApplication.translate("Dialog", u"\u5bc6\u7801", None))
+        self.label_3.setText(QCoreApplication.translate("Dialog", u"\u670d\u52a1\u5668URL", None))
         self.btn_undo.setText(QCoreApplication.translate("Dialog", u"\u53d6\u6d88", None))
         self.btn_submit.setText(QCoreApplication.translate("Dialog", u"\u786e\u8ba4", None))
     # retranslateUi

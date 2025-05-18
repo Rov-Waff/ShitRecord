@@ -2,6 +2,7 @@ from PySide6.QtWidgets import *
 from ui.ui_MainWindow import Ui_Form
 import sys
 import json
+import requests
 import Account
 
 class App(QWidget,Ui_Form):
@@ -22,8 +23,8 @@ class App(QWidget,Ui_Form):
         self.account_window=Account.Account(self)
         print(self.config)
 
-        
-
+    def load_status(self):
+        r=requests.post("http://localhost/api/getStatus")
 if __name__=="__main__":
     app=QApplication(sys.argv)
     window=App()
